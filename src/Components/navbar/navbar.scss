@@ -1,0 +1,278 @@
+.navbar {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 15px;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  width: 100%;
+  z-index: 999;
+
+  &.scrolled {
+    background-color: var(--main-color);
+    top: 1%;
+    color: white;
+    font-size: 15px;
+    width: 60%;
+    z-index: 999;
+    border-radius: 10px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    height: 40px;
+
+    .left {
+      display: flex;
+      align-items: center;
+      padding-right: 15px;
+
+      img {
+        height: 125px;
+        margin-right: 70px;
+
+        @media screen and (max-width: 768px) {
+          height: 60px;
+          margin-right: 20px;
+        }
+      }
+
+      span {
+        margin-right: 35px;
+        cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          margin-right: 10px;
+        }
+      }
+
+      .home {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          padding: 10px;
+          border-radius: 5px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        span {
+          padding: 10px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            padding-bottom: 10px;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+
+      .store {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          padding: 10px;
+          border-radius: 5px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        span {
+          padding: 10px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            padding-bottom: 10px;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+
+      .stuff {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          padding: 10px;
+          border-radius: 5px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        span {
+          padding: 10px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            padding-bottom: 10px;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+
+      .categories {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          padding: 10px;
+          border-radius: 5px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        span {
+          padding: 10px;
+
+          @media screen and (max-width: 768px) {
+            padding: 5px;
+          }
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            padding-bottom: 10px;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 35px;
+        cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          margin-right: 10px;
+        }
+      }
+
+      span {
+        padding: 10px;
+        cursor: pointer;
+
+        @media screen and (max-width: 768px) {
+          padding: 5px;
+        }
+      }
+
+      .profile {
+        .options {
+          display: none;
+          background-color: var(--main-color);
+          padding: 20px;
+          border-radius: 5px;
+
+          @media screen and (max-width: 768px) {
+            padding: 10px;
+          }
+        }
+
+        &:hover {
+          .options {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    position: fixed;
+
+    &.scrolled {
+      font-size: 12px;
+    }
+
+    .container {
+      padding: 5px;
+      height: 30px;
+
+      .left {
+        padding-right: 10px;
+
+        img {
+          height: 40px;
+          margin-right: 10px;
+        }
+
+        span {
+          margin-right: 5px;
+        }
+
+        .home,
+        .store,
+        .stuff,
+        .categories {
+          .options {
+            padding: 5px;
+          }
+
+          span {
+            padding: 5px;
+          }
+        }
+      }
+
+      .right {
+        .icon {
+          margin-right: 10px;
+        }
+
+        span {
+          padding: 5px;
+        }
+
+        .profile {
+          .options {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}

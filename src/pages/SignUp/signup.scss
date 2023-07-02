@@ -1,0 +1,103 @@
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px; /* Adjust the padding as needed */
+  }
+}
+
+.signup-container {
+  border: 1px solid #ccc;
+  padding: 70px;
+  border-radius: 5px;
+  width: 25%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%; /* Adjust the width to occupy full width on smaller screens */
+    padding: 40px; /* Adjust the padding as needed */
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 150px;
+
+      @media screen and (max-width: 768px) {
+        width: 100%; /* Adjust the logo size to fit the container width on smaller screens */
+      }
+    }
+  }
+
+  .signup-content {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      text-align: left;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 8px;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        &:focus {
+          border-color: #f1c557;
+          outline: none;
+          box-shadow: 0 0 3px 1px rgba(241, 197, 87, 0.5);
+        }
+      }
+
+      button {
+        padding: 12px 24px;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #f1c557;
+        border: none;
+        color: black;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #e69138;
+        }
+      }
+    }
+
+    p {
+      margin: 20px 0;
+    }
+
+    .create-account {
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #f0f0f0;
+      border: none;
+      color: #333;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+}
