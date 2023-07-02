@@ -10,23 +10,33 @@ const Home = ({ type }) => {
   const [genre, setGenre] = useState(null);
 
   useEffect(() => {
-    const getRandomLists = async () => {
-      try {
-        const res = await api.get(
-          `api/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`,
-          {
-            headers: {
-              token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
-            },
+    setTimeout(() => {
+      const user = localStorage.getItem("user");
+      if (user) {
+        const parsedUser = JSON.parse(user);
+        const accessToken = parsedUser.accessToken;
+  
+        const getRandomLists = async () => {
+          try {
+            const res = await api.get(
+              `api/lists${type ? "?type=" + type : ""}${
+                genre ? "&genre=" + genre : ""
+              }`,
+              {
+                headers: {
+                  token: "Bearer " + accessToken,
+                },
+              }
+            );
+            setLists(res.data);
+          } catch (err) {
+            console.log(err);
           }
-        );
-        setLists(res.data);
-      } catch (err) {
-        console.log(err);
+        };
+  
+        getRandomLists();
       }
-    };
-
-    getRandomLists();
+    }, 0);
   }, [type, genre]);
 
   const clearGenre = () => {

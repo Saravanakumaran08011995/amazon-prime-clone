@@ -7,22 +7,31 @@ import api from "../../api/api";
 export const Featured = ( { type ,setGenre }) => {
   const [content, setContent ] = useState({})
 
-  useEffect(()=>{
-    const getRandomContent = async ()=>{
-      try {
-        const res = await api.get(`api/movies/random?type=${type}`,{
-          headers: {
-            token:
-              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+  useEffect(() => {
+    setTimeout(() => {
+      const user = localStorage.getItem("user");
+      if (user) {
+        const parsedUser = JSON.parse(user);
+        const accessToken = parsedUser.accessToken;
+  
+        const getRandomContent = async () => {
+          try {
+            const res = await api.get(`api/movies/random?type=${type}`, {
+              headers: {
+                token: "Bearer " + accessToken,
+              },
+            });
+            setContent(res.data[0]);
+          } catch (err) {
+            console.log(err);
           }
-        })
-        setContent(res.data[0])
-      } catch (err) {
-        console.log(err)
+        };
+  
+        getRandomContent();
       }
-    }
-    getRandomContent()
-  },[type])
+    }, 0);
+  }, [type]);
+  
   return (
     <>
     <div className="featured">
